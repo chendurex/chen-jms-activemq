@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.chen.jms.configuration.AMQApplicationHolder,\
+com.chen.jms.configuration.AMQBeanFactoryHolder,\
+com.chen.jms.configuration.ActiveMQConfiguration

@@ -1,0 +1,37 @@
+ext{
+    pro_type = 'component'
+    child_version = '1.0.0-SNAPSHOT'
+}
+apply plugin:'java'
+apply plugin: 'com.chen.jarconfig'
+/**
+ * 插件配置
+ */
+buildscript {
+    repositories {
+        maven { url "http://nexus.chen.com/nexus/content/groups/public/" }
+    }
+    dependencies {
+        classpath 'com.chen:chen-gradle-plugin:+'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE'
+    }
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+}
+repositories {
+    maven { url "http://nexus.dayhr.com/nexus/content/groups/public/" }
+}
+
+dependencies {
+    compile 'org.springframework:spring-jms:4.3.10.RELEASE'
+    compile 'org.springframework:spring-messaging:4.3.10.RELEASE'
+
+    compileOnly 'org.springframework.boot:spring-boot-starter-activemq:1.5.6.RELEASE'
+    compileOnly 'org.springframework.boot:spring-boot-starter-web:1.5.6.RELEASE'
+    compileOnly 'org.springframework.boot:spring-boot-starter-test:1.5.6.RELEASE'
+    compileOnly 'com.fasterxml.jackson.core:jackson-databind'
+    compileOnly 'org.slf4j:slf4j-api:1.7.12'
+    compileOnly 'ch.qos.logback:logback-classic:1.1.7'
+    testCompile 'junit:junit:4.12'
+}
