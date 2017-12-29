@@ -20,7 +20,7 @@ buildscript {
     }
 }
 repositories {
-    maven { url "http://nexus.dayhr.com/nexus/content/groups/public/" }
+    maven { url "http://nexus.chen.com/nexus/content/groups/public/" }
 }
 
 dependencies {
